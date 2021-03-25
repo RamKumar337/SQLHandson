@@ -1,0 +1,103 @@
+CREATE TABLE PROGRAMMER
+    -> (EmpNo numeric(5),
+    -> ProjId varchar(5),
+    -> LastName varchar(30),
+    -> FirstName varchar(30),
+    -> HireDate Date,
+    -> Language varchar(15),
+    -> TaskNo numeric(2),
+    -> Privilidge varchar(25)
+    -> );
+
+mysql> INSERT INTO PROGRAMMER(EmpNo,ProjId,LastName,FirstName,HireDate,Language,TaskNo,Privilidge)VALUES
+    -> (201,"Gupta","Saurav",1/1/95,"NPR","VB",52,"Secret"),    
+    -> (390,"KWC","Gosh","pinky",1/05/93,"JAVA",11,"Top Secret"),
+    -> (789,"RNC","Agarwal","Praveen",08/31/98,"VB",11,"Secret"),
+    -> (134,"TIPPS","Chaudary","Supriyo",07/15/95,"C++",52,"Secret"),
+    -> (896,"KWC","Jha","Ranjit",06/15/97,"JAVA",10,"Top Secret"),
+    -> (345,"TIPPS","John","peter",11/15/99,"JAVA",52,NULL),
+    -> (563,"NITTS","Andreson","Andy",08/15/94,"C++",89,"Confidential");
+
+mysql> CREATE TABLE WEATHER
+    -> (City varchar(20),
+    -> State varchar(20),
+    -> High numeric(3),
+    -> Low numeric(2)
+    -> );
+
+INSERT INTO WEATHER(City,State,High,Low)VALUES
+    -> ("Calcutta","West Bengal",105,90),
+    -> ("Trivandrum","Kerala",101,92),
+    -> ("Mumbai","Maharastra",88,96),
+    -> ("Bangalore","Karnataka",77,60),
+    -> ("New Delhi",NULL,80,72)
+    -> ;
+
+QUERIES OUTPUT:
+
+E)
+
+
+
+1. Update PROGRAMMER set ProjId='NITTS,Language='C++' where FirstName='Saurav' and LastName='Gupta';
+
+
+
+2.Update BOOKS set ShelfNO='S10' where Title='DBMS';
+
+
+
+3.delete from PROGRAMMER where EmpNo=134;
+
+
+
+4.ALTER TABLE WEATHER
+ADD NatureOfTheClimate('rainy','cloudy','sunny','snow')  varchar;
+
+
+
+5.DROP TABLE WEATHER;
+
+----------------------------------------------
+
+
+G)
+
+
+
+6.Select * from CUSTOMER where CITY='Chennai';
+
+
+
+7.select * from CUSTOMER where SUPPLIERID=2;
+
+
+
+8.Select CUSTID,FNAME,LNAME from CUSTOMER where DATEFIRSTPURCHASED>'31-Jan-2005';
+
+
+
+9.select * from Supplier where location='Coimbatore';
+
+
+
+10.select * from Supplier where SNAME like 'G%';
+
+
+
+11.select * from CUSTOMER where LNAME not like '%e%';
+
+
+
+12.select * from CUSTOMER where DATEFIRSTPURCHASED like'%2006' order by CUSTID desc;
+
+
+
+13.select * from ORDERS where QUANTITY<35;
+
+
+
+14.select * from ITEMS where SUPPLIERID=4;
+
+
+15.select * from ITEMS where SUPPLIERID=3 and MINQTY>7 order by ITEMID;
