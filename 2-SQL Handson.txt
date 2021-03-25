@@ -1,0 +1,169 @@
+
+
+/////////////////////         MYSQL SECOND HANDSON          /////////////////////////
+
+mysql> CREATE TABLE WORLDCITY (CITY VARCHAR(20),COUNTRY VARCHAR(30),CONTINENT VARCHAR(30),LATITUDE NUMERIC(5,2),NORTHSOUTH VARCHAR(2),LONGITUDE NUMERIC(5,2),EASTWEST VARCHAR(2));
+Query OK, 0 rows affected (7.52 sec)
+
+mysql> INSERT INTO WORLDCITY VALUES('ATHENS','GREECE','EUROPE',37.59,'N',23.44,'E'),
+	('ATLANTA','UNITED STATES','NORTH AMERICA',33.45,'N',84.23,'W'),
+	('DALLAS','UNITED STATES','NORTH AMERICA',32.47,'N',96.47,'W'),
+	('NASHVILLE','UNITED STATES','NORTH AMERICA',36.09,'N',86.46,'W'),
+	('VICTORIA','CANADA','NORTH AMERICA',48.25,'N',123.21,'W'),
+	('PETERBOROUGH','CANADA','NORTH AMERICA',44.18,'N',79.18,'W'),
+	('VANCOUVER','CANADA','NORTH AMERICA',49.18,'N',123.04,'W'),
+	('TOLEDO','UNITED STATES','NORTH AMERICA',41.39,'N',83.82,'W'),
+	('WARSAW','POLAND','EUROPE',52.15'N',21.00,'E'),
+	('WARSAW','POLAND','EUROPE',52.15,'N',21.00,'E'),
+	('LIMA','PERU','SOUTH AMERICA',12.03,'S',77.03,'W');
+	('RIO DE JANEIRO','BRAZIL','SOUTH AMERICA',22.43,'S',43.13,'W'),
+	('SANTIAGO','CHILE','SOUTH AMERICA',33.27,'S',70.40,'W'),
+	('BOGOTA','COLOMBIA','SOUTH AMERICA',04.36,'N',74.05,'W'),
+	('BUENOS AIRES','ARGENTINA','SOUTH AMERICA',34.36,'N',58.28,'W'),
+	('QUITO','ECUADOR','SOUTH AMERICA',00.13,'S',78.30,'W'),
+	('CARACAS','VENEZEULA','SOUTH AMERICA',10.30,'N',66.56,'W'),
+	('MADRAS','INDIA','ASIA',28.36,'N',77.12,'E'),
+	('BOMBAY','INDIA','ASIA',18.58,'N',72.50,'E'),
+	('MANCHESTHER','ENGLAND','EUROPE',51.30,'N',0.0,NULL),
+	('MOSCOW','RUSSIA','EUROPE',55.45,'N',37.35,'E'),
+	('PARIS','FRANCE','EUROPE',48.52,'N',2.20,'E'),
+	('SHENYANG','CHINA','ASIA',41.48,'N',123.27,'E'),
+	('CAIRO','EGYPT','AFRICA',30.03,'N',31.15,'E')
+	('TRIPOLI','LYBIA','AFRICA',32.54,'N',13.11,'E'),
+	('BEIJING','CHINA','ASIA',39.56,'N',116.24,'E'),
+	('ROME','ITALY','EUROPE',41.54,'N',12.29,'E'),
+	('TOKYO','JAPAN','ASIA',35.42,'N',139.46,'E'),
+	('SYDNEY','AUSTRALIA','AUSTRALIA',33.52,'S',151.13,'E'),
+	('SPARTA','GREECE','EUROPE',37.05,'N',22.27,'E'),
+	('MADRID','SPAIN','EUROPE',40.24,'N',3.41,'W'));
+
+
+mysql> SELECT * FROM WORLDCITY;
++----------------+---------------+---------------+----------+------------+-----------+----------+
+| CITY           | COUNTRY       | CONTINENT     | LATITUDE | NORTHSOUTH | LONGITUDE | EASTWEST |
++----------------+---------------+---------------+----------+------------+-----------+----------+
+| ATHENS         | GREECE        | EUROPE        |    37.59 | N          |     23.44 | E        |
+| ATLANTA        | UNITED STATES | NORTH AMERICA |    33.45 | N          |     84.23 | W        |
+| DALLAS         | UNITED STATES | NORTH AMERICA |    32.47 | N          |     96.47 | W        |
+| NASHVILLE      | UNITED STATES | NORTH AMERICA |    36.09 | N          |     86.46 | W        |
+| VICTORIA       | CANADA        | NORTH AMERICA |    48.25 | N          |    123.21 | W        |
+| PETERBOROUGH   | CANADA        | NORTH AMERICA |    44.18 | N          |     79.18 | W        |
+| VANCOUVER      | CANADA        | NORTH AMERICA |    49.18 | N          |    123.04 | W        |
+| TOLEDO         | UNITED STATES | NORTH AMERICA |    41.39 | N          |     83.82 | W        |
+| WARSAW         | POLAND        | EUROPE        |    52.15 | N          |     21.00 | E        |
+| LIMA           | PERU          | SOUTH AMERICA |    12.03 | S          |     77.03 | W        |
+| RIO DE JANEIRO | BRAZIL        | SOUTH AMERICA |    22.43 | S          |     43.13 | W        |
+| SANTIAGO       | CHILE         | SOUTH AMERICA |    33.27 | S          |     70.40 | W        |
+| BOGOTA         | COLOMBIA      | SOUTH AMERICA |     4.36 | N          |     74.05 | W        |
+| BUENOS AIRES   | ARGENTINA     | SOUTH AMERICA |    34.36 | N          |     58.28 | W        |
+| QUITO          | ECUADOR       | SOUTH AMERICA |     0.13 | S          |     78.30 | W        |
+| CARACAS        | VENEZEULA     | SOUTH AMERICA |    10.30 | N          |     66.56 | W        |
+| MADRAS         | INDIA         | ASIA          |    28.36 | N          |     77.12 | E        |
+| BOMBAY         | INDIA         | ASIA          |    18.58 | N          |     72.50 | E        |
+| MANCHESTHER    | ENGLAND       | EUROPE        |    51.30 | N          |      0.00 | NULL     |
+| MOSCOW         | RUSSIA        | EUROPE        |    55.45 | N          |     37.35 | E        |
+| PARIS          | FRANCE        | EUROPE        |    48.52 | N          |      2.20 | E        |
+| SHENYANG       | CHINA         | ASIA          |    41.48 | N          |    123.27 | E        |
+| CAIRO          | EGYPT         | AFRICA        |    30.03 | N          |     31.15 | E        |
+| TRIPOLI        | LYBIA         | AFRICA        |    32.54 | N          |     13.11 | E        |
+| BEIJING        | CHINA         | ASIA          |    39.56 | N          |    116.24 | E        |
+| ROME           | ITALY         | EUROPE        |    41.54 | N          |     12.29 | E        |
+| TOKYO          | JAPAN         | ASIA          |    35.42 | N          |    139.46 | E        |
+| SYDNEY         | AUSTRALIA     | AUSTRALIA     |    33.52 | S          |    151.13 | E        |
+| SPARTA         | GREECE        | EUROPE        |    37.05 | N          |     22.27 | E        |
+| MADRID         | SPAIN         | EUROPE        |    40.24 | N          |      3.41 | W        |
++----------------+---------------+---------------+----------+------------+-----------+----------+
+30 rows in set (0.04 sec)
+
+
+Q1    For all the different countries contained in the WORLDCITY table, display their names and the continent in which they are located. Make sure that no country name is duplicated.
+
+mysql> SELECT DISTINCT COUNTRY ,CONTINENT FROM WORLDCITY;
++---------------+---------------+
+| COUNTRY       | CONTINENT     |
++---------------+---------------+
+| GREECE        | EUROPE        |
+| UNITED STATES | NORTH AMERICA |
+| CANADA        | NORTH AMERICA |
+| POLAND        | EUROPE        |
+| PERU          | SOUTH AMERICA |
+| BRAZIL        | SOUTH AMERICA |
+| CHILE         | SOUTH AMERICA |
+| COLOMBIA      | SOUTH AMERICA |
+| ARGENTINA     | SOUTH AMERICA |
+| ECUADOR       | SOUTH AMERICA |
+| VENEZEULA     | SOUTH AMERICA |
+| INDIA         | ASIA          |
+| ENGLAND       | EUROPE        |
+| RUSSIA        | EUROPE        |
+| FRANCE        | EUROPE        |
+| CHINA         | ASIA          |
+| EGYPT         | AFRICA        |
+| LYBIA         | AFRICA        |
+| ITALY         | EUROPE        |
+| JAPAN         | ASIA          |
+| AUSTRALIA     | AUSTRALIA     |
+| SPAIN         | EUROPE        |
++---------------+---------------+
+22 rows in set (0.12 sec)
+
+
+Q2      Write an SQL query to display the list of the city and country for all the cities that begin with letter R.
+
+mysql> SELECT CITY , COUNTRY FROM WORLDCITY WHERE CITY LIKE 'R%';
++----------------+---------+
+| CITY           | COUNTRY |
++----------------+---------+
+| RIO DE JANEIRO | BRAZIL  |
+| ROME           | ITALY   |
++----------------+---------+
+2 rows in set (0.00 sec)
+
+
+Q3   Write an SQL query to display the list of the city and country for all the cities that end with letter A.
+
+mysql> SELECT CITY , COUNTRY FROM WORLDCITY WHERE CITY LIKE '%A';
++----------+---------------+
+| CITY     | COUNTRY       |
++----------+---------------+
+| ATLANTA  | UNITED STATES |
+| VICTORIA | CANADA        |
+| LIMA     | PERU          |
+| BOGOTA   | COLOMBIA      |
+| SPARTA   | GREECE        |
++----------+---------------+
+5 rows in set (0.00 sec)
+
+
+Q4    Write an SQL query to display the list of the city and country for all the cities that begin with letter M and have exactly six letters in them.
+
+mysql> SELECT CITY , COUNTRY FROM WORLDCITY WHERE CITY LIKE 'M_____';
++--------+---------+
+| CITY   | COUNTRY |
++--------+---------+
+| MADRAS | INDIA   |
+| MOSCOW | RUSSIA  |
+| MADRID | SPAIN   |
++--------+---------+
+3 rows in set (0.00 sec)
+
+
+Q5.     Write an SQL query to display the list of the city and country for all the cities that contain an A as the second letter.
+
+mysql> SELECT CITY , COUNTRY FROM WORLDCITY WHERE CITY LIKE '_A%';
++-------------+---------------+
+| CITY        | COUNTRY       |
++-------------+---------------+
+| DALLAS      | UNITED STATES |
+| NASHVILLE   | UNITED STATES |
+| VANCOUVER   | CANADA        |
+| WARSAW      | POLAND        |
+| SANTIAGO    | CHILE         |
+| CARACAS     | VENEZEULA     |
+| MADRAS      | INDIA         |
+| MANCHESTHER | ENGLAND       |
+| PARIS       | FRANCE        |
+| CAIRO       | EGYPT         |
+| MADRID      | SPAIN         |
++-------------+---------------+
+11 rows in set (0.00 sec)
